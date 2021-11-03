@@ -1,0 +1,106 @@
+<header id="main-header">
+    <h3 id="greeting">Welcome, <%= current_user.first_name.capitalize %>!</h3>
+    <a href="/show/<%= current_user.id %>" role="button" class="btn btn-primary" id="account">Edit your Account</a>
+    <a href="/guide" role="button" class="btn btn-warning" id="guide">Hiking Guide</a>
+    <a href="/new/hike" role="button" class="btn btn-info" id="guide">Create Your New Hike</a>
+    <a href="/find/hikes" role="button" class="btn btn-success" id="new_hike">Find a Hike To Join</a>
+    <a href="/logout" role="button" class="btn btn-danger" id="logout_head">Logout</a>
+</header>
+<div>
+    <body id="hike-index">
+    <div class="card-deck">
+        <div class="card">
+            <div class="card-body">
+            <h4 class="card-title">Your Current Hikes</h4>
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Description</th>
+                    <th>Trail</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Photo</th>
+                    <th>Weather</th>
+                    <th>Creator</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <% @future_hikes.each do |hike| %>
+                    <% if current_user.id == hike.user.id %>
+                <tbody>
+                <tr>
+                <td><a id="table_data" href="/show/hike/<%= hike.id %>" role="button" class="btn btn-warning"><%= hike.description %></a></td>
+                <td><a href="https://www.google.com/search?q=+<%= hike.trail %>+<%= hike.city %>" target="_blank" role="button" class="btn btn-secondary"><%= hike.trail %></a></td>
+                <td><a href="https://www.google.com/search?q=+<%= hike.city %>+<%= hike.state %>" role="button" target="_blank" class="btn btn-primary"><%= hike.city %></a></td>
+                <td><a href="#" role="button" class="btn btn-info"><%= hike.state %></a></td>
+                <td><a href="#" role="button" class="btn btn-warning btn-sm" id="table_data"><%= hike.hike_date.strftime("%m/%d/%Y") %></a></td>
+                <td><a href="#" class="btn btn-dark"><%= hike.time %></a></td>
+                <td><img id="hike" src="<%= hike.image_url %>" alt="<%= hike.description %>" style="border: solid 4px black;"></td>
+                <td><a href="https://www.google.com/search?q=<%= hike.city %>+weather" target="_blank" role="button" class="btn btn-primary">View Weather</a></td>
+                <td><a href="/show/<%= hike.user.id %>" class="btn btn-dark" role="button"><%= hike.user.first_name %> <%= hike.user.last_name %></a></td>
+                    <% if not hike.users_joined.include?(current_user) %>
+                        <td><a href="/join/<%= hike.id %>" role="button" class="btn btn-success" data-method="POST">Join</a></td>
+                    <% else %>
+                        <td><a href="/unjoin/<%= hike.id %>" role="button" class="btn btn-danger" data-method="delete">Un-Attend</a></td>
+                    <% end %>
+                </tr>
+                <% end %>
+        <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+        <hr>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Your Upcomming Hikes Joined</h4>
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>Description</th>
+                        <th>Trail</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Photo</th>
+                        <th>Weather</th>
+                        <th>Creator</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <% @hikes_joined.each do |hike| %>
+                        <% if hike.hike_date > @today %>
+                            <% if hike.users_joined.include?(current_user) %>
+                            <tbody>
+                                <tr id="table_data">
+                                    <td><a id="table_data" href="/show/hike/<%= hike.id %>" role="button" class="btn btn-warning"><%= hike.description %></a></td>
+                                    <td><a href="https://www.google.com/search?q=+<%= hike.trail %>+<%= hike.city %>" target="_blank" role="button" class="btn btn-secondary"><%= hike.trail %></a></td>
+                                    <td><a href="https://www.google.com/search?q=+<%= hike.city %>+<%= hike.state %>" role="button" target="_blank" class="btn btn-primary"><%= hike.city %></a></td>
+                                    <td><a href="https://www.google.com/search?q=+<%= hike.state %>" role="button" target="_blank" class="btn btn-info"><%= hike.state %></a></td>
+                                    <td><a href="#" role="button" class="btn btn-warning btn-sm" id="table_data"><%= hike.hike_date.strftime("%m/%d/%Y") %></a></td>
+                                    <td><a href="#" class="btn btn-dark"><%= hike.time %></a></td>
+                                    <td><img id="hike" src="<%= hike.image_url %>" alt="<%= hike.description %>" style="border: solid 4px black;"></td>
+                                    <td><a href="https://www.google.com/search?q=<%= hike.city %>+weather" target="_blank" role="button" class="btn btn-primary">View Weather</a></td>
+                                    <td><a href="/show/<%= hike.user.id %>" class="btn btn-dark" role="button"><%= hike.user.first_name %> <%= hike.user.last_name %></a></td>
+                                        <% if not hike.users_joined.include?(current_user) %>
+                                            <td><a href="/join/<%= hike.id %>" role="button" class="btn btn-success" data-method="POST">Join</a></td>
+                                        <% else %>
+                                            <td><a href="/unjoin/<%= hike.id %>" role="button" class="btn btn-danger" data-method="delete">Cancel</a></td>
+                                        <% end %>
+                                    <td>
+                                </tbody>
+                <% end %>
+            <% end %>
+            <% end %>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+

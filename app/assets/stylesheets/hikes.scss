@@ -1,0 +1,197 @@
+// Place all the styles related to the Hikes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// #jumbotron{
+//     // background: url(https://skyline.ie/images/website_gouganne_barra_2_new_20.jpg) no-repeat; background-size: cover;
+//     display: flex;
+//     justify-content: space-between;
+//     height: 250px;
+// }
+
+.display-6{
+    color: white;
+    display: flex;
+}
+
+#hike_details{
+    display: flex;
+    justify-content: space-around;
+    color: white
+}
+
+.hike_lead{
+    margin-top: 10px;
+}
+
+.nav_buttons{
+    margin: 10px 10px 0px 0px;
+}
+
+#account{
+    width: 175px;
+    height: 40px;
+}
+
+// #guide{
+//     width: 150px;
+//     height: 40px;
+//     color: white
+// }
+
+// #new_hike{
+//     width: 150px;
+//     height: 40px;
+// }
+
+// #logout_head{
+//     width: 150px;
+//     height: 40px;
+// }
+
+.card{
+    opacity: 75%;
+}
+
+// .card-title, label{
+//     text-decoration: underline; font-weight: bolder;
+//     color: white
+// }
+
+.find_hike_table{
+    width:1500px;
+    background: url(https://media.istockphoto.com/vectors/wood-texture-natural-dark-gray-wooden-background-vector-id1221709804?k=6&m=1221709804&s=612x612&w=0&h=-sezKaYAmDd8WT5U27ViElxDmjzZ6h7dFZaUejh0P2s=)  no-repeat; background-size: cover;
+}
+
+// .main{
+//     display: flex;
+// }
+
+#table_headers{
+    color: white;
+    background-color: black;
+    font-weight: bolder;
+    opacity: 0.65;
+}
+
+#table_data{
+    color: white
+}
+
+#hike{
+    height:50px;
+    width: 100px;
+}
+
+.find_header{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+#find_hike_table{
+    margin: auto;
+}
+
+.hike_head{
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: solid 5px black;
+    background: rgb(56,191,14);
+background: radial-gradient(circle, rgba(56,191,14,0.8267682072829132) 0%, rgba(244,244,244,0.16850490196078427) 50%, rgba(16,93,38,0.9724264705882353) 100%);
+}
+
+#hike_page{
+    padding: 10px;
+    background-color: darkslategray;
+    margin: 10px 50px 0px 50px;
+}
+
+#hike_page_lead{
+    margin-top: 15px;
+}
+
+#jumbo_foot{
+    display: flex;
+}
+
+.trail_pic{
+    margin-left: 170px;
+    height: 500px;
+    width: 750px;
+}
+
+
+.user_container{
+    margin: 250px 0px 0px 650px;
+}
+
+.hiking_guide{
+    padding: 10px;
+}
+
+
+
+#guide_imgs{
+    height: 100px;
+    padding: 10px;
+}
+
+.guide_nav{
+    padding: 50px 50px 50px 0px;
+}
+
+#guide_jumbotron{
+    background-color: darkslategray;
+    opacity: 0.85;
+    padding: 10px;
+}
+
+
+#hike_changer{
+    margin: 15px 0px 0px 170px;
+}
+
+#join_hikes{
+    margin: 25px 0px 0px 215px;
+}
+
+#hike-index {
+    background: url(https://www.hikingupward.com/PNF/RoanMountain/images/061017/IMG_5372.jpg) no-repeat center fixed; background-size: cover;
+}
+
+#header {
+    display: flex;
+    justify-content:space-around;
+    background-color: black;
+    opacity: 75%;
+    padding: 10px;
+}
+
+#main-header {
+        display: flex;
+        justify-content:space-around;
+        background-color: black;
+        opacity: 90%;
+        padding: 10px;
+}
+
+#greeting {
+    color: white;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.card-deck {
+    // display: flex;
+    // opacity: 75%;
+    // justify-content: space-around;
+    margin-top: 250px;
+}
+
+#hike-form {
+    margin: 150px 0px 0px 750px;
+    opacity: 75%;
+}

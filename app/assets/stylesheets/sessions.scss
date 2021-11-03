@@ -1,0 +1,48 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.body{
+    background: url(https://www.hikingupward.com/PNF/RoanMountain/images/061017/IMG_5372.jpg) no-repeat center fixed; background-size: cover;
+}
+
+#header {
+    display: flex;
+    justify-content:space-around;
+    background-color: black;
+    opacity: 75%;
+    padding: 10px;
+}
+
+#header-title {
+    color: white;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.registration{
+    background-color: black;
+    opacity: 0.75;
+    border: solid black 3px;
+    padding: 100px;
+}
+
+#reg-card {
+    background-color: black;
+}
+
+.login{
+    background-color: black;
+    opacity: 0.75;
+    border: solid black 3px;
+    width: 500px;
+    margin-left: 20px;
+    padding: 50px;
+}
+
+.label{
+    color: white
+}
+
+.sign-in{
+    margin-top: 25px;
+}

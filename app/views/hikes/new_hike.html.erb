@@ -1,0 +1,54 @@
+<body id="hike-index">  
+    <div class="card text-white bg-dark mb-3 d-inline-block" style="max-width: 50rem;" id="hike-form">
+        <div class="card-body">
+            <h4 class="card-title">Create a new Hike!</h4>
+            <% if flash[:errors] %>
+                <% flash[:errors].each do |e| %>
+    <p style="background-color: rgb(146, 0, 0);color: rgb(153, 153, 0);font-weight: 800;"><%= e %></p>
+                <% end %>
+            <% end %>
+<form action="/create/hike" method="POST" id="hike_form">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<input type="hidden" name="hike[user_id]" value="<%= current_user.id %>">
+<div class="form-group row">
+<label>Hike Description</label>
+<div class="col-sm-20">
+<input type="text" maxlength="40" class="form-control" name="hike[description]" placeholder="Describe your hike">
+</div>
+</div>
+<label>Trail</label>
+<div class="col-sm-20">
+<input type="text" class="form-control" name="hike[trail]" placeholder="Trail this hike will take">
+</div>
+    <label>City</label>
+        <div class="col-sm-20">
+        <input type="text" class="form-control" name="hike[city]" placeholder="City the trail is in">
+        </div>
+    <label>State (abbrev)</label>
+<div class="col-sm-20">
+<input type="text" class="form-control" name="hike[state]" placeholder="CO, CA, UT, ND">
+</div>
+<label>Date</label>
+<div class="col-sm-20">
+<input type="date" class="form-control" name="hike[hike_date]" placeholder="Date of your hike">
+</div>
+<label>Time</label>
+<div class="col-sm-20">
+<input type="text" class="form-control" name="hike[time]" placeholder="Time the hike will begin, example: 9:00 AM">
+</div>
+<label>Picture</label>
+<div class="col-sm-20">
+<input type="text" class="form-control" name="hike[image_url]" placeholder="Please copy a valid link to a picture of your hike">
+</div><br>
+<div class="form-group row">
+<div class="col-sm-10 offset-sm-2">
+    <button type="submit" class="btn btn-success" style="margin-left: 20px">Create Hike!</button>
+    <a href="/dashboard"><button class="btn btn-danger">Cancel</button></a>
+    <!-- <button class="btn btn-danger"><a href="/"></a>Cancel</button> -->
+</div>
+</div><br>
+</form>
+        </div>
+      </div>
+
+</body>

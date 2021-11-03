@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+    <title>HikersLanding</title>
+</head>
+<header id="header">
+    <h3 id="header-title">Hikers Landing</h3>
+    <div>
+    <p>
+        <a class="btn btn-warning" data-toggle="collapse" href="#collapseExampleOne" aria-expanded="false" aria-controls="collapseExampleOne">Register</a>
+    </p>
+    <div class="collapse" id="collapseExampleOne">
+        <div class="card card-body" id="reg-card">
+            <div class="registration">
+                    <% if flash[:errors] %>
+                        <% flash[:errors].each do |e| %>
+                            <p style="background-color: rgb(146, 0, 0);color: rgb(153, 153, 0);font-weight: 800;"><%= e %></p>
+                        <% end %>
+                    <% end %>
+                <h1 class="label">Registration</h1>
+                <form action="/new" method="POST">
+                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                        <div class="form-group row">
+                            <label class="label">First Name</label>
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control" name="user[first_name]" placeholder="First name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="label">Last Name</label>
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control" name="user[last_name]" placeholder="Last name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="label">Email</label>
+                            <div class="col-sm-10">
+                            <input type="email" class="form-control" name="user[email]" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="label">Password</label>
+                            <div class="col-sm-10">
+                            <input type="password" class="form-control" name="user[password]">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="label">Confirm Password</label>
+                            <div class="col-sm-10">
+                            <input type="password" class="form-control" name="user[password_confirmation]">
+                            </div>
+                        </div>
+                        <div class="sign-in">
+                            <div class="col-sm-10 offset-sm-2">
+                            <button type="submit" class="btn btn-warning">Register</button>
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+<div>
+        <p>
+            <a class="btn btn-success" data-toggle="collapse" href="#collapseExampleTwo" aria-expanded="false" aria-controls="collapseExampleTwo">Login</a>
+            </p>
+        <div class="collapse" id="collapseExampleTwo">
+            <div class="login">
+                <% if flash[:login] %>
+                    <% flash[:login].each do |e| %>
+                        <p style="background-color: rgb(146, 0, 0);color: rgb(153, 153, 0);font-weight: 800;"><%= e %></p>
+                    <% end %>
+                <% end %>
+                <h1 class="label">Login</h1>
+                    <form action="/show" method="POST">
+                        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                        <div class="form-group row">
+                            <label class="label">Email</label>
+                            <div class="col-sm-10">
+                            <input type="email" class="form-control" name="user[email]" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="label">Password</label>
+                            <div class="col-sm-10">
+                            <input type="password" class="form-control" name="user[password]">
+                        </div>
+                        </div>
+                            <div class="sign-in">
+                                <div class="col-sm-10 offset-sm-2">
+                                    <button type="submit" class="btn btn-success">Sign in</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+        </div>
+</div>
+</div>
+</header>
+<body class="body">
+    <!-- <div class="registration">
+        <h6 class="label">Your next adventure begins with the first step.....</h6>
+            <% if flash[:errors] %>
+                <% flash[:errors].each do |e| %>
+                    <p style="background-color: rgb(146, 0, 0);color: rgb(153, 153, 0);font-weight: 800;"><%= e %></p>
+                <% end %>
+            <% end %>
+        <h1 class="label">Registration</h1>
+        <form action="/new" method="POST">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <div class="form-group row">
+                    <label class="label">First Name</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" name="user[first_name]" placeholder="First name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="label">Last Name</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" name="user[last_name]" placeholder="Last name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="label">Email</label>
+                    <div class="col-sm-10">
+                    <input type="email" class="form-control" name="user[email]" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="label">Password</label>
+                    <div class="col-sm-10">
+                    <input type="password" class="form-control" name="user[password]">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="label">Confirm Password</label>
+                    <div class="col-sm-10">
+                    <input type="password" class="form-control" name="user[password_confirmation]">
+                    </div>
+                </div>
+                <div class="sign-in">
+                    <div class="col-sm-10 offset-sm-2">
+                    <button type="submit" class="btn btn-warning">Register</button>
+                    </div>
+                </div>
+        </form>
+    </div> -->
+    <!-- <div class="login">
+        <% if flash[:login] %>
+            <% flash[:login].each do |e| %>
+                <p style="background-color: rgb(146, 0, 0);color: rgb(153, 153, 0);font-weight: 800;"><%= e %></p>
+            <% end %>
+        <% end %>
+        <h1 class="label">Login</h1>
+            <form action="/show" method="POST">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <div class="form-group row">
+                    <label class="label">Email</label>
+                    <div class="col-sm-10">
+                    <input type="email" class="form-control" name="user[email]" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="label">Password</label>
+                    <div class="col-sm-10">
+                    <input type="password" class="form-control" name="user[password]">
+                </div>
+                </div>
+                    <div class="sign-in">
+                        <div class="col-sm-10 offset-sm-2">
+                            <button type="submit" class="btn btn-warning">Sign in</button>
+                        </div>
+                    </div>
+                </form>
+            </div> -->
+        </body>
+    </html>

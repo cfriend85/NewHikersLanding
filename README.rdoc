@@ -1,0 +1,3 @@
+== README
+
+This is a RoR project utilizing Bootstrap for a User driven Hiking website in which users can create thier own hikes for others to join and vice versa.
