@@ -8,6 +8,10 @@ Login/Splash Page
 
 https://github.com/cfriend85/NewHikersLanding/blob/master/demo/login_splash.gif
 
+Table Buttons
+
+https://github.com/cfriend85/NewHikersLanding/blob/master/demo/buttons.gif
+
 Find A Hike
 
 https://github.com/cfriend85/NewHikersLanding/blob/master/demo/find_hike.gif
@@ -15,3 +19,16 @@ https://github.com/cfriend85/NewHikersLanding/blob/master/demo/find_hike.gif
 Create A Hike
 
 https://github.com/cfriend85/NewHikersLanding/blob/master/demo/create_hike.gif
+
+Hikers Guide
+
+https://github.com/cfriend85/NewHikersLanding/blob/master/demo/guide.gif
+
+Discussion Board
+
+https://github.com/cfriend85/NewHikersLanding/blob/master/demo/discussion.gif
+
+User Accounts
+
+https://github.com/cfriend85/NewHikersLanding/blob/master/demo/accounts.gif
+
