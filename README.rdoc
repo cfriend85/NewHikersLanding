@@ -4,4 +4,4 @@
 
 User driven hiking App utilizing Ruby on Rails & Bootstrap 4 in which users create their hikes for others to join and vice versa along with discussion boards for each hike displaying user messages relating to the hike. Hiking guide displays items needed for hiking safely as well as link to purhcase items on Amazon. Full CRUD relational database.
 
-<img src="demo/login_splash.gif">
+<img src="/demo/login_splash.gif">
